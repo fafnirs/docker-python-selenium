@@ -1,0 +1,17 @@
+version: '3'
+services:
+  my-python:
+    # ディレクトリを指定するとその配下の Dockerfile を取得して実行する
+    build: ./
+    # `$ docker ps` 時に NAME として見える名前
+    container_name: my-python
+    # 勝手に終了しないよう設定しておく
+    tty: true
+    # ボリュームのマウント
+    volumes:
+      - .:/root/project/
+    # `$ docker exec -it my-python bash` でアタッチした際のカレントディレクトリとなる
+    working_dir: /root/project/
+    # 環境変数
+    environment:
+      - TZ=Asia/Tokyo

@@ -1,0 +1,17 @@
+Running BrowserMob Proxy using LittleProxy implementation. To revert to the legacy implementation, run the proxy with the command-line option '--use-littleproxy false'.
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$2 (file:/workspace/browsermob-proxy-2.1.4/lib/browsermob-dist-2.1.4.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of com.google.inject.internal.cglib.core.$ReflectUtils$2
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+[INFO  2020-09-05T16:34:21,112 net.lightbody.bmp.proxy.Main] (main) Starting BrowserMob Proxy version 2.1.4 
+[INFO  2020-09-05T16:34:21,376 org.eclipse.jetty.util.log] (main) jetty-7.x.y-SNAPSHOT 
+[INFO  2020-09-05T16:34:21,542 org.eclipse.jetty.util.log] (main) started o.e.j.s.ServletContextHandler{/,null} 
+[INFO  2020-09-05T16:34:22,291 org.eclipse.jetty.util.log] (main) Started SelectChannelConnector@0.0.0.0:60000 
+[INFO  2020-09-05T16:34:25,942 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp450589816-17) Starting proxy at address: 0.0.0.0/0.0.0.0:8081 
+[INFO  2020-09-05T16:34:26,310 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp450589816-17) Proxy listening with TCP transport 
+[INFO  2020-09-05T16:34:26,816 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp450589816-17) Proxy started at address: /0.0.0.0:8081 
+[INFO  2020-09-05T16:34:43,680 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp450589816-18) Shutting down proxy server gracefully 
+[INFO  2020-09-05T16:34:43,706 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp450589816-18) Closing all channels (graceful) 
+[INFO  2020-09-05T16:34:43,758 org.littleshoot.proxy.impl.ServerGroup] (qtp450589816-18) Shutting down server group event loops (graceful) 
+[INFO  2020-09-05T16:34:45,981 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp450589816-18) Done shutting down proxy server 
