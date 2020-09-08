@@ -32,9 +32,12 @@ def prepareDirectory():
         print('imageUrlList Directory is already exists')
 
 def writePagelist(pageSource, fileName):
+    """
+    urlリストをファイル出力する。
+    """
     htmlFile = Path(Path.cwd()).joinpath('imageUrlList').joinpath(fileName)
     with htmlFile.open('w', encoding = 'utf-8', newline = '\n') as file:
-        file.write(pageSource)
+        file.writelines(pageSource)
 
 if __name__ == '__main__':
 
@@ -66,14 +69,14 @@ if __name__ == '__main__':
         # HTTP(S)通信の内容も取得したい場合
         proxy.new_har('smcc', options={'captureHeaders': True})
 
-        driver.get('https://www.smbc-card.com/nyukai/flow/detail/support.jsp')
+        driver.get('https://www.smbc-card.com/nyukai/loan/special.jsp')
         print(driver.title)
 
         # 通信内容を表示
         #print(proxy.har)
 
         # Harを出力
-        jsonFile = Path(Path.cwd()).joinpath('json').joinpath('lp-3.json')
+        jsonFile = Path(Path.cwd()).joinpath('json').joinpath('loan_special.json')
         with jsonFile.open('w', encoding = 'utf-8', newline = None) as file:
             # Unicode 出力しないようにする
             json.dump(proxy.har, file, indent = 2, ensure_ascii = False)
@@ -81,17 +84,17 @@ if __name__ == '__main__':
         imageUrlList =[]
         # Harからurlのみを抽出
         for ent in proxy.har['log']['entries']:
-            print(ent['request']['url'])
-            #imageUrlList.append(ent)
+            #print(ent['request']['url'])
+            imageUrlList.append(ent['request']['url'])
 
         # ファイル出力
         prepareDirectory()
-        #writePagelist(imageUrlList, 'lp-3.txt')
-        #print(imageUrlList)
+        writePagelist(imageUrlList, 'loan_special.txt')
+        print(imageUrlList)
 
         # ブラウザのログを取得して表示
-        log = driver.get_log('browser')
-        print(log)
+        #log = driver.get_log('browser')
+        #print(log)
 
     except:
         traceback.print_exc()
